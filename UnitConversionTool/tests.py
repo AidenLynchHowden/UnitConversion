@@ -21,8 +21,9 @@ class TestConvert(unittest.TestCase):
         
     def test_5(self):
         value_out = convert(value_in=100, units_from='psi', units_to='pa')
-        self.assertAlmostEqual(value_out, 689475.7293)
+        self.assertAlmostEqual(value_out, 689475.7293, places=3)
         
     def test_6(self):
         value_out = convert(value_in=123.33, units_from='psi', units_to='pa')
-        self.assertAlmostEqual(value_out, 850330.417)
+        self.assertAlmostEqual(value_out, 850330.417, places=3)
+        

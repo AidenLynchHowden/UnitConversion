@@ -5,7 +5,9 @@ from django.forms import (
 )
 
 PRESSURE_UNITS = [
-    ('value', 'display')
+    ('pa', 'pa'),
+    ('bar', 'bar'),
+    ('psi', 'psi'),
 ]
 
 

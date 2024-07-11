@@ -2,7 +2,7 @@ def convert(value_in: float, units_from: str, units_to: str) -> float:
     units_to_si = {
         'pa': 1,
         'bar': 1e5,
-        'psi': 6.894757, 
+        'psi': 6894.7572931783, 
     }
     
     if units_from not in units_to_si or units_to not in units_to_si:
