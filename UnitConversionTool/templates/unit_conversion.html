@@ -1,3 +1,6 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'UnitConversionTool/css/styles.css' %}">
+
 <form action="{% url 'unit_conversion' %}" method="post">
     {% csrf_token %}
     <div>
