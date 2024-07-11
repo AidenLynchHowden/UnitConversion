@@ -1,6 +1,30 @@
-<form action="{% url "unit_conversion" %}" method="post">
+<form action="{% url 'unit_conversion' %}" method="post">
     {% csrf_token %}
-    {{ form }}
+    <div>
+        <label for="{{ form.value_in.id_for_label }}">{{ form.value_in.label }}</label>
+        {{ form.value_in }}
+        {% if form.value_in.errors %}
+            <div class="error">{{ form.value_in.errors }}</div>
+        {% endif %}
+    </div>
+   
+    <div>
+        <label for="{{ form.units_from.id_for_label }}">{{ form.units_from.label }}</label>
+        {{ form.units_from }}
+        {% if form.units_from.errors %}
+            <div class="error">{{ form.units_from.errors }}</div>
+        {% endif %}
+    </div>
+   
+    <div>
+        <label for="{{ form.units_to.id_for_label }}">{{ form.units_to.label }}</label>
+        {{ form.units_to }}
+        {% if form.units_to.errors %}
+            <div class="error">{{ form.units_to.errors }}</div>
+        {% endif %}
+    </div>
+   
+
     <input type="submit" value="Submit">
-    <input type='number' value="{{ value_out }}">
+    <input type="number" value="{{ value_out }}" readonly>
 </form>
