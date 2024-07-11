@@ -1,2 +1,11 @@
-body {background-color:blueviolet}
-div {background-color:mediumpurple}
+body {
+     background-color:rgb(190, 215, 236);
+     font-family:monospace;
+     line-height: 2.6;
+     font-size: 17;
+     color:orangered;
+}
+
+* {
+    margin: 5;
+}
