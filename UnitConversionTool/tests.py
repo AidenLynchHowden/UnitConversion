@@ -39,3 +39,6 @@ class TestConvert(unittest.TestCase):
         value_out = convert(value_in=654346, units_from='kgcm2', units_to='pa')
         self.assertAlmostEqual(value_out, 64169422009, places=3)
         
+    def test_10(self):
+        value_out = convert(value_in=100, units_from='C', units_to='F')
+        self.assertAlmostEqual(value_out, 212, )

@@ -7,8 +7,8 @@ def convert(value_in: float, units_from: str, units_to: str) -> float:
         'mpa':      ('pressure', 1000000, 0),
         'kgcm2':    ('pressure', 98066.5, 0),
         'K':        ('temperature', 1, 0),
-        'F':        ('temperature', 0, 1.8),
-        'C':        ('temperature', 1, 15),
+        'F':        ('temperature', 5/9, 229835/900),
+        'C':        ('temperature', 1, 273.15),
     }
     
     if units_from not in units_to_si or units_to not in units_to_si:
@@ -20,8 +20,8 @@ def convert(value_in: float, units_from: str, units_to: str) -> float:
     if category_from != category_to:
         raise ValueError("Cannot convert different categories")
     
-    value_in_si = value_in * a_from
-    value_out = value_in_si / a_to
+    value_in_si = value_in * a_from + b_from # turns input into K = si equivelant
+    value_out = (value_in_si - b_to) / a_to # Converts si to the user input
     return value_out
 
 
