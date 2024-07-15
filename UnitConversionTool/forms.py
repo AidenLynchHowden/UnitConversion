@@ -8,6 +8,10 @@ PRESSURE_UNITS = [
     ('pa', 'pa'),
     ('bar', 'bar'),
     ('psi', 'psi'),
+    ('pz', 'pz'),
+    ('kpa', 'kpa'),
+    ('mpa', 'mpa'),
+    ('kg/cm2', 'kg/cm2'),
 ]
 
 
