@@ -42,3 +42,12 @@ class TestConvert(unittest.TestCase):
     def test_10(self):
         value_out = convert(value_in=100, units_from='C', units_to='F')
         self.assertAlmostEqual(value_out, 212, )
+        
+    def test_11(self):
+        value_out = convert(value_in=100, units_from='C', units_to='K')
+        self.assertAlmostEqual(value_out, 373.15, )
+        
+    def test_12(self):
+        value_out = convert(value_in=123.33, units_from='C', units_to='C')
+        self.assertAlmostEqual(value_out, 123.33, )
+        
