@@ -6,6 +6,9 @@ def convert(value_in: float, units_from: str, units_to: str) -> float:
         'kpa':      ('pressure', 1000, 0),
         'mpa':      ('pressure', 1000000, 0),
         'kgcm2':    ('pressure', 98066.5, 0),
+        'K':        ('temperature', 1, 0),
+        'F':        ('temperature', 0, 1.8),
+        'C':        ('temperature', 1, 15),
     }
     
     if units_from not in units_to_si or units_to not in units_to_si:
