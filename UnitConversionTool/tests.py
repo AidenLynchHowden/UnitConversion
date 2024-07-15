@@ -28,14 +28,14 @@ class TestConvert(unittest.TestCase):
         self.assertAlmostEqual(value_out, 850330.417, places=3)
         
     def test_7(self):
-        value_out = convert(value_in=123.33, units_from='psi', units_to='pa')
-        self.assertAlmostEqual(value_out, 850330.417, places=3)
+        value_out = convert(value_in=235654, units_from='kpa', units_to='pa')
+        self.assertAlmostEqual(value_out, 235654000, places=3)
         
     def test_8(self):
-        value_out = convert(value_in=123.33, units_from='psi', units_to='pa')
-        self.assertAlmostEqual(value_out, 850330.417, places=3)
+        value_out = convert(value_in=854642, units_from='mpa', units_to='pa')
+        self.assertAlmostEqual(value_out, 854642000000, places=3)
         
     def test_9(self):
-        value_out = convert(value_in=123.33, units_from='psi', units_to='pa')
-        self.assertAlmostEqual(value_out, 850330.417, places=3)
+        value_out = convert(value_in=654346, units_from='kgcm2', units_to='pa')
+        self.assertAlmostEqual(value_out, 64169422009, places=3)
         

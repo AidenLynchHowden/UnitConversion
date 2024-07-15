@@ -5,7 +5,7 @@ def convert(value_in: float, units_from: str, units_to: str) -> float:
         'psi': 6894.7572931783, 
         'kpa': 1000,
         'mpa': 1000000,
-        'kg/cm2': 1.0197162129779E-5,
+        'kgcm2': 98066.5,
     }
     
     if units_from not in units_to_si or units_to not in units_to_si:

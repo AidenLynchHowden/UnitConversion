@@ -3,7 +3,9 @@ from .forms import UnitConversionForm
 from .convert import convert
 
 
-def unit_conversion(request):                                    
+def unit_conversion(request):    
+    value_out = None  
+                                  
     if request.method == 'POST':
         form = UnitConversionForm(request.POST)
         if form.is_valid():
@@ -15,7 +17,6 @@ def unit_conversion(request):
             print(form.errors)
     else:
         form = UnitConversionForm()
-        value_out = None
     
     context = {
         'form': form, 
