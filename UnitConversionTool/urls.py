@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from .views import (
     # defined unit_conversion here, but it isn't highlighted. 
-    unit_conversion
+    unit_conversion,
+    update_unit_choices,
 )
 
 app_name = 'UnitConversionTool'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('unit/conversion/', unit_conversion, name='unit_conversion'),
+    path('update/unit/choices/', update_unit_choices, name='update_unit_choices'),
 ]

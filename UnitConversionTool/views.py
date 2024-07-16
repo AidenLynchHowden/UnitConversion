@@ -26,7 +26,7 @@ def unit_conversion(request):
     return render(request, 'unit_conversion.html', context)
 
 
-def update_unit_choices(request):
+def update_unit_choices(request):                    # This is to re render the form with the correct unit choices
     form = UnitConversionForm(request.POST) 
     if form.is_valid():                              # Form will always be valid due to Value In = none 
         category = form.cleaned_data['category']     # [] Is a key for the pressure of temp. choices
