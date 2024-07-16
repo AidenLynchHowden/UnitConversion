@@ -1,43 +1,45 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'UnitConversionTool/css/styles.css' %}">
-<script type="text/javascript" src=" https://unpkg.com/htmx.org "></script>
 
-<form action="{% url 'unit_conversion' %}" method="post">
-    {% csrf_token %}
+<div id='id-unit-conversion-page'>
+    <link rel="stylesheet" href="{% static 'UnitConversionTool/css/styles.css' %}">
+    <script type="text/javascript" src=" https://unpkg.com/htmx.org "></script>
 
-    <div>
-        <label for="{{ form.value_in.id_for_label }}">{{ form.value_in.label }}</label>
-        {{ form.value_in }}
-        {% if form.value_in.errors %}
-            <div class="error">{{ form.value_in.errors }}</div>
-        {% endif %}
-    </div>
+    <form action="{% url 'unit_conversion' %}" method="post">
+        {% csrf_token %}
 
-    <div>
-        <label for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
-        {{ form.category }}
-        {% if form.category.errors %}
-            <div class="error">{{ form.category.errors }}</div>
-        {% endif %}
-    </div>
-   
-    <div>
-        <label for="{{ form.units_from.id_for_label }}">{{ form.units_from.label }}</label>
-        {{ form.units_from }}
-        {% if form.units_from.errors %}
-            <div class="error">{{ form.units_from.errors }}</div>
-        {% endif %}
-    </div>
-   
-    <div>
-        <label for="{{ form.units_to.id_for_label }}">{{ form.units_to.label }}</label>
-        {{ form.units_to }}
-        {% if form.units_to.errors %}
-            <div class="error">{{ form.units_to.errors }}</div>
-        {% endif %}
-    </div>
-   
+        <div>
+            <label for="{{ form.value_in.id_for_label }}">{{ form.value_in.label }}</label>
+            {{ form.value_in }}
+            {% if form.value_in.errors %}
+                <div class="error">{{ form.value_in.errors }}</div>
+            {% endif %}
+        </div>
 
-    <input type="submit" value="Submit">
-    <input type="number" value="{{ value_out }}" readonly>
-</form>
+        <div hx-trigger="change" hx-post="{% url 'update_unit_choices' %}" hx-target='#id-unit-conversion-page' hx-swap="outerHTML" >
+            <label for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
+            {{ form.category }}
+            {% if form.category.errors %}
+                <div class="error">{{ form.category.errors }}</div>
+            {% endif %}
+        </div>
+    
+        <div>
+            <label for="{{ form.units_from.id_for_label }}">{{ form.units_from.label }}</label>
+            {{ form.units_from }}
+            {% if form.units_from.errors %}
+                <div class="error">{{ form.units_from.errors }}</div>
+            {% endif %}
+        </div>
+    
+        <div>
+            <label for="{{ form.units_to.id_for_label }}">{{ form.units_to.label }}</label>
+            {{ form.units_to }}
+            {% if form.units_to.errors %}
+                <div class="error">{{ form.units_to.errors }}</div>
+            {% endif %}
+        </div>
+
+        <input type="submit" value="Submit">
+        <input type="number" value="{{ value_out }}" readonly>
+    </form>
+</div>
