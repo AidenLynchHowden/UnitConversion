@@ -26,10 +26,13 @@ CATEGORY_CHOICES = [
 ]
 
 
+ALL_UNITS = PRESSURE_UNITS + TEMPERATURE_UNITS
+
+
 class UnitConversionForm(Form):
     value_in = FloatField(required=False)              # Value in being the label shows the user where to enter their value for conversion. 
-    units_from = ChoiceField(choices=PRESSURE_UNITS)
-    units_to = ChoiceField(choices=PRESSURE_UNITS)
+    units_from = ChoiceField(choices=ALL_UNITS)
+    units_to = ChoiceField(choices=ALL_UNITS)
     category = ChoiceField(choices=CATEGORY_CHOICES)
     
     def update_unit_choices(self, category: str):      # Self is the form. 

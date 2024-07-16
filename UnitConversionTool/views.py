@@ -14,10 +14,10 @@ def unit_conversion(request):
             units_to = form.cleaned_data['units_to']
             if value_in is not None:
                 value_out = convert(value_in, units_from, units_to)
-        else:
-            print(form.errors)
+            form.update_unit_choices( category = form.cleaned_data['category'])
     else:
         form = UnitConversionForm()    
+        form.update_unit_choices('pressure')      # change these categories. 
     
     context = {
         'form': form, 
