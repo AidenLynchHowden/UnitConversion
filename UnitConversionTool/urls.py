@@ -25,6 +25,6 @@ from .views import (
 app_name = 'UnitConversionTool'
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('unit/conversion/', unit_conversion, name='unit_conversion'),
-    path('update/unit/choices/', update_unit_choices, name='update_unit_choices'),
+    path(route='unit/conversion/', view=unit_conversion, name='unit_conversion'),
+    path(route='update/unit/choices/', view=update_unit_choices, name='update_unit_choices'),
 ]
