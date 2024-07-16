@@ -3,6 +3,16 @@
 
 <form action="{% url 'unit_conversion' %}" method="post">
     {% csrf_token %}
+
+    <div>
+        <label for="{{ form.category_choice.id_for_label }}">{{ form.category_choice.label }}</label>
+        {{ form.category_choice }}
+        {% if form.category_choice.errors %}
+            <div class="error">{{ form.category_choice.errors }}</div>
+        {% endif %}
+    </div>
+   
+
     <div>
         <label for="{{ form.value_in.id_for_label }}">{{ form.value_in.label }}</label>
         {{ form.value_in }}
