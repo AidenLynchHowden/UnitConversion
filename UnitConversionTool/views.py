@@ -12,7 +12,8 @@ def unit_conversion(request):
             value_in = form.cleaned_data['value_in']
             units_from = form.cleaned_data['units_from']
             units_to = form.cleaned_data['units_to']
-            value_out = convert(value_in, units_from, units_to)
+            if value_in is not None:
+                value_out = convert(value_in, units_from, units_to)
         else:
             print(form.errors)
     else:
@@ -21,6 +22,17 @@ def unit_conversion(request):
     context = {
         'form': form, 
         'value_out': value_out,
+    }
+    return render(request, 'unit_conversion.html', context)
+
+
+def update_unit_choices(request):
+    form = UnitConversionForm(request.POST) 
+    if form.is_valid():                              # Form will always be valid due to Value In = none 
+        category = form.cleaned_data['category']     # [] Is a key for the pressure of temp. choices
+        form.update_unit_choices(category)
+    context = {
+        'form': form, 
     }
     return render(request, 'unit_conversion.html', context)
 

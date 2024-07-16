@@ -1,23 +1,23 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'UnitConversionTool/css/styles.css' %}">
+<script type="text/javascript" src=" https://unpkg.com/htmx.org "></script>
 
 <form action="{% url 'unit_conversion' %}" method="post">
     {% csrf_token %}
-
-    <div>
-        <label for="{{ form.category_choice.id_for_label }}">{{ form.category_choice.label }}</label>
-        {{ form.category_choice }}
-        {% if form.category_choice.errors %}
-            <div class="error">{{ form.category_choice.errors }}</div>
-        {% endif %}
-    </div>
-   
 
     <div>
         <label for="{{ form.value_in.id_for_label }}">{{ form.value_in.label }}</label>
         {{ form.value_in }}
         {% if form.value_in.errors %}
             <div class="error">{{ form.value_in.errors }}</div>
+        {% endif %}
+    </div>
+
+    <div>
+        <label for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
+        {{ form.category }}
+        {% if form.category.errors %}
+            <div class="error">{{ form.category.errors }}</div>
         {% endif %}
     </div>
    
