@@ -13,7 +13,7 @@ PRESSURE_UNITS = [
     ('kgcm2', 'kgcm2'),
 ]
 
-TEMPERATURE_UNITS = [         # The Class at line 22 would need to be changed to account for the temperature 
+TEMPERATURE_UNITS = [       
     ('K', 'K'),
     ('F', 'F'),
     ('C', 'C'),
@@ -22,7 +22,7 @@ TEMPERATURE_UNITS = [         # The Class at line 22 would need to be changed to
 
 CATEGORY_CHOICES = [
     ('pressure', 'Pressure'),
-    ('temperature', 'Temperature')
+    ('temperature', 'Temperature'),
 ]
 
 
