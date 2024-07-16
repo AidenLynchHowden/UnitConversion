@@ -35,5 +35,11 @@ class UnitConversionForm(Form):
     def update_unit_choices(self, category: str):      # Self is the form. 
         options = []                                   # The [] Is the key for the data dictionary.
         
+        if category == 'temperature':                  # This means that whatever category is selected the page updates accordingly.
+            options = TEMPERATURE_UNITS
+        elif category == 'pressure':
+            options = PRESSURE_UNITS
+        
         self.fields['units_from'].choices = options
         self.fields['units_to'].choices = options
+
