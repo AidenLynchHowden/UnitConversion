@@ -25,12 +25,14 @@
             {% endif %}
         </div>
     
-        <div>
-            <label for="{{ form.units_from.id_for_label }}">{{ form.units_from.label }}</label>
+        <div class="grid-container">
+            <label class="grid-item" for="{{ form.units_from.id_for_label }}">{{ form.units_from.label }}</label>
+            <div class="grid-item">
             {{ form.units_from }}
             {% if form.units_from.errors %}
                 <div class="error">{{ form.units_from.errors }}</div>
             {% endif %}
+            </div>
         </div>
     
         <div>
