@@ -7,9 +7,9 @@
     <form action="{% url 'unit_conversion' %}" method="post">
         {% csrf_token %}
 
-        <div class="grid-container">
-            <label class="grid-item" for="{{ form.value_in.id_for_label }}">{{ form.value_in.label }}</label>
-            <div class="grid-item">
+        <div class="row">
+            <label class="col" for="{{ form.value_in.id_for_label }}">{{ form.value_in.label }}</label>
+            <div class="col">
                 {{ form.value_in }}
                 {% if form.value_in.errors %}
                     <div class="error">{{ form.value_in.errors }}</div>
@@ -17,9 +17,9 @@
             </div>
         </div>
 
-        <div class="grid-container" hx-trigger="change" hx-post="{% url 'update_unit_choices' %}" hx-target='#id-unit-conversion-page' hx-swap="outerHTML" >
-            <label class="grid-item" for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
-            <div class="grid-item">
+        <div class="row" hx-trigger="change" hx-post="{% url 'update_unit_choices' %}" hx-target='#id-unit-conversion-page' hx-swap="outerHTML" >
+            <label class="col" for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
+            <div class="col">
             {{ form.category }}
             {% if form.category.errors %}
                 <div class="error">{{ form.category.errors }}</div>
@@ -27,9 +27,9 @@
             </div>
         </div>
     
-        <div class="grid-container">
-            <label class="grid-item" for="{{ form.units_from.id_for_label }}">{{ form.units_from.label }}</label>
-            <div class="grid-item">
+        <div class="row">
+            <label class="col" for="{{ form.units_from.id_for_label }}">{{ form.units_from.label }}</label>
+            <div class="col">
             {{ form.units_from }}
             {% if form.units_from.errors %}
                 <div class="error">{{ form.units_from.errors }}</div>
@@ -37,17 +37,19 @@
             </div>
         </div>
     
-        <div class="grid-container">
-            <label class="grid-item" for="{{ form.units_to.id_for_label }}">{{ form.units_to.label }}</label>
-            <div class="grid-item">
+        <div class="row">
+            <label class="col" for="{{ form.units_to.id_for_label }}">{{ form.units_to.label }}</label>
+            <div class="col">
             {{ form.units_to }}
             {% if form.units_to.errors %}
                 <div class="error">{{ form.units_to.errors }}</div>
             {% endif %}
             </div>
         </div>
-
-        <input type="submit" value="Submit">
-        <input type="number" value="{{ value_out }}" readonly>
+        
+        <div class='row'>
+            <input class='col' type="submit" value="Submit">
+            <input class='col' type="number" value="{{ value_out }}" readonly>
+        </div>
     </form>
 </div>

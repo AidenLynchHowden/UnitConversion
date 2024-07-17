@@ -13,15 +13,13 @@ body {
 
 
 
-.grid-container {
+.row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 0.5fr 0.5fr;
     grid-gap: 10px;
-    width: 400px;
-  }
+    width: fit-content;
+}
   
-  .grid-item {
-    padding: 20px;
-    background-color: rgb(190, 215, 236);
-  }
-  
+.col {
+    width: 200px;
+}
