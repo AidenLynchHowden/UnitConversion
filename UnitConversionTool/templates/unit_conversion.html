@@ -17,12 +17,14 @@
             </div>
         </div>
 
-        <div hx-trigger="change" hx-post="{% url 'update_unit_choices' %}" hx-target='#id-unit-conversion-page' hx-swap="outerHTML" >
-            <label for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
+        <div class="grid-container" hx-trigger="change" hx-post="{% url 'update_unit_choices' %}" hx-target='#id-unit-conversion-page' hx-swap="outerHTML" >
+            <label class="grid-item" for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
+            <div class="grid-item">
             {{ form.category }}
             {% if form.category.errors %}
                 <div class="error">{{ form.category.errors }}</div>
             {% endif %}
+            </div>
         </div>
     
         <div class="grid-container">
