@@ -23,3 +23,7 @@ body {
 .col {
     width: 200px;
 }
+
+.col select, .col input {
+    width: 100%
+}
