@@ -17,7 +17,7 @@ def unit_conversion(request):
             form.update_unit_choices( category = form.cleaned_data['category'])   # Means that 
     else:
         form = UnitConversionForm()    
-        form.update_unit_choices('pressure')      # change these categories. 
+        form.update_unit_choices('pressure')      
     
     context = {
         'form': form, 
